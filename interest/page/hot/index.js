@@ -1,7 +1,7 @@
 Page({
   onShareAppMessage() {
     return {
-      title: '小程序云开发展示',
+      title: '热门',
       path: 'page/hot/index'
     }
   },
