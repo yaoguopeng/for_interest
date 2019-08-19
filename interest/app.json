@@ -127,7 +127,7 @@
       {
         "pagePath": "page/mine/index",
         "iconPath": "image/user.png",
-        "selectedIconPath": "image/icon_api_HL.png",
+        "selectedIconPath": "image/icon_API_HL.png",
         "text": "我的"
       },
       {
