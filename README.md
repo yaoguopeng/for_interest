@@ -26,3 +26,6 @@ npm run lint
 ## 截图
 
 ![截图](https://developers.weixin.qq.com/miniprogram/dev/image/demo.png)
+
+# for_interest
+来趣星小程序前端代码
