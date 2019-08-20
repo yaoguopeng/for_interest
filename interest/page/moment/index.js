@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navbar: ['话题', '好友', '热门'],
+    navbar: ['关注话题', '关注好友', '热门瞬间'],
     currentTab: 0,
     lists: [],
   },

@@ -63,5 +63,9 @@ App({
       this.globalData.openid = res.result.openid
       return res.result.openid
     })
+  },
+  globalData: {
+    userInfo: null,
+    web_url: 'http://192.168.1.107:2013/'
   }
 })
