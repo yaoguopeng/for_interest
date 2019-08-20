@@ -109,3 +109,49 @@
 .kind-list-item-bd-show {
   height: auto;
 }
+
+
+.search{
+  width: 702rpx;
+  height: 60rpx;
+  padding: 24rpx;
+  line-height: 74rpx;
+  display: inline-flex;
+  position: relative;
+  background-color: #f0eff5
+}
+.search-input{
+  height: 60rpx;
+  width: 534rpx;
+  background-color: #ffffff;
+  padding-left: 64rpx;
+  border-top-left-radius: 14rpx;
+  border-bottom-left-radius: 14rpx;
+  font-size: 30rpx
+}
+.search-button{
+  background-color: #dfdfdf;
+  width: 168rpx;
+  height: 60rpx;
+  color: #8f8f8f;
+  padding: 0;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  border: none;
+  border-radius: 0;
+  margin-top: 0;
+  border-top-right-radius: 14rpx;
+  border-bottom-right-radius: 14rpx
+}
+.search-icon{
+  width: 36rpx;
+  height: 36rpx;
+  position: absolute;
+  left: 38rpx;
+  top: 37rpx
+}
+
+.container {
+  height: 100%;
+  box-sizing: border-box;
+} 

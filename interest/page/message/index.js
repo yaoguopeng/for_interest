@@ -1,8 +1,8 @@
 Page({
   onShareAppMessage() {
     return {
-      title: '话题',
-      path: 'page/topic/index'
+      title: '社区',
+      path: 'page/fun/index'
     }
   },
 
@@ -10,7 +10,7 @@ Page({
     list: [
       {
         id: 'user',
-        name: '热门话题',
+        name: '新粉丝',
         open: false,
         pages: [
           {
@@ -20,7 +20,7 @@ Page({
         ]
       }, {
         id: 'database',
-        name: '猜你喜欢',
+        name: '私信',
         open: false,
         pages: [
           {
@@ -36,7 +36,7 @@ Page({
         ]
       }, {
         id: 'storage',
-        name: '最近更新',
+        name: '评论',
         open: false,
         pages: [
           {
@@ -58,7 +58,26 @@ Page({
         ]
       }, {
         id: 'scf',
-        name: '话题推荐',
+        name: '点赞',
+        open: false,
+        pages: [
+          {
+            zh: 'WXContext',
+            url: 'get-wx-context/get-wx-context'
+          }, {
+            zh: '数据库',
+            url: 'scf-database/scf-database'
+          }, {
+            zh: '存储',
+            url: 'scf-storage/scf-storage'
+          }, {
+            zh: '云调用',
+            url: 'scf-openapi/scf-openapi'
+          }
+        ]
+      }, {
+        id: 'share',
+        name: '转发与推荐',
         open: false,
         pages: [
           {

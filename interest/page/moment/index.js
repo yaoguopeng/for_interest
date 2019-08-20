@@ -1,4 +1,4 @@
-// page/mine/index.js
+// page/moment/index.js
 const web_url = getApp().globalData.web_url;
 Page({
 
@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navbar: ['话题', '帖子', '赞过', '评过','个人中心'],
+    navbar: ['话题', '好友', '热门'],
     currentTab: 0,
     lists: [],
   },
