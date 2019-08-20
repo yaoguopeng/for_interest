@@ -13,10 +13,12 @@ Page({
 
   //导航选项
   navbar: function (e) {
-    let currentTab = e.currentTarget.dataset.id;
-    let state = currentTab
+    if (e) {
+      this.data.currentTab = e.currentTarget.dataset.id;
+    }
+    let state = this.data.currentTab;
     this.setData({
-      currentTab: currentTab,
+      currentTab: this.data.currentTab,
       state: state
     })
     var that = this
@@ -192,7 +194,7 @@ Page({
       state: options.state
     })
     // console.log(user_id)
-
+    this.navbar();
   },
 
   /**

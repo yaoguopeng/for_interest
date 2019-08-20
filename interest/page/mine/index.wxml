@@ -1,9 +1,5 @@
 <!--page/mine/index.wxml-->
 <view class='container'>
-  <view class='myInfo-hd'>
-    <image src='{{userPic}}'></image>
-    <text>{{userName}}</text>
-  </view>
   <view class='navbar'>
     <view class="navbar-item {{currentTab==index?'active':''}}" wx:for='{{navbar}}' wx:key='list_code' data-id='{{index}}' bindtap='navbar'>{{item}}</view>
   </view>
