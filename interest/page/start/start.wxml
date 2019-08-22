@@ -1,0 +1,26 @@
+<!--start.wxml-->
+<view class="container">
+  <view class="remind-box" wx:if="{{remind}}">
+    <image class="remind-img" src="/image/loading.gif"></image>
+  </view>
+  <block wx:else>
+    <image class="title" src="/image/title8.png"></image>
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+         <open-data class="logo" type="userAvatarUrl"></open-data>
+        <image class="wave" src="/image/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="/image/wave.png" mode="aspectFill"></image>
+      </view>
+      <view class="bd">
+         <image class="smalltitle" src="/image/confirm-word1.png">
+         </image>
+         <view class="welcome-motto">
+            <text> {{islandIndex.content}}  \n  {{islandIndex.author}}</text>
+         </view>
+        <view class="confirm-btn" bindtap='goToIndex'>
+          <text >Go</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
