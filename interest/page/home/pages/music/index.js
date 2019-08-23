@@ -1,33 +1,31 @@
-// page/home/index.js
+// page/music/index.js
 const web_url = getApp().globalData.web_url;
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     currentTab: 0,
-    lists: [],
     web_url: web_url,
-    islandMotto: {},
-    islandMottoBg:{},
+    islandJoke: {},
+    bg_img: '',
+    islandJokeBg:{},
   },
+  nextItem: function(){
+
+  }
+  ,
+  previousItem: function(){
+    wx.switchTab({
+      url: '/page/home/index',
+    });
+  }
+  ,
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    try {
-      var user_id = wx.getStorageSync('user_id')
-      that.setData({
-        user_id: user_id,
-      })
-    } catch (e) {
-      // Do something when catch error
-    }
-    that.setData({
-      user_id: that.data.user_id
-    })
+  
   },
 
   /**
@@ -41,31 +39,46 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // 获取islandIndex
-    let _self = this;
-    wx.request({
-      url: web_url + '/island/motto',
-      header: { 'content-type': 'application/json' },
-      method: 'GET',
-      dataType: 'json',
-      success: function (res) {
-        _self.setData({
-          islandMotto: res.data.entity
-        });
-      },
-    })
+    // 获取随机的默认背景图
+    this.setData({
+      bg_img: '/page/home/resources/bg/bg' + Math.floor(Math.random()) + '.jpg'
+    });
+
     // 获取背景图
     wx.request({
-      url: web_url + '/island/background',
+      url: web_url + '/island/background?backgroundType=JOKE',
       header: { 'content-type': 'application/json' },
       method: 'GET',
       dataType: 'json',
       success: function (res) {
         _self.setData({
-          islandMottoBg: res.data.entity
+          bg_img: web_url + res.data.entity.backgroundImagePath,
         });
       },
     })
+
+    // 获取islandJoke
+    let _self = this;
+    wx.request({
+      url: web_url + '/island/joke',
+      header: { 'content-type': 'application/json' },
+      method: 'GET',
+      dataType: 'json',
+      success: function (res) {
+        // 图片本身为joke内容
+        if (res.data.entity.content == '' && res.data.entity.imagePath !== '') {
+          _self.setData({
+            bg_img: web_url + res.data.entity.imagePath,
+          });
+        }else{
+          // joke 内容为文字
+          _self.setData({
+            islandJoke: res.data.entity
+          });
+        }
+      },
+    })
+
   },
 
   /**

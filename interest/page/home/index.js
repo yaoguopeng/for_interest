@@ -1,4 +1,6 @@
 // page/home/index.js
+
+var app = getApp();
 const web_url = getApp().globalData.web_url;
 Page({
 
@@ -7,10 +9,24 @@ Page({
    */
   data: {
     currentTab: 0,
-    lists: [],
-    web_url: web_url,
     islandMotto: {},
-    islandMottoBg:{},
+    bg_img:'',
+  },
+  /**
+  * 后一个页面
+  */
+  nextItem: function () {
+    wx.redirectTo({
+      url: '/page/home/pages/music/index',
+    });
+  },
+  /**
+   * 前一个页面
+   */
+  previousItem: function () {
+    wx.redirectTo({
+      url: '/page/home/pages/joke/index',
+    });
   },
   /**
    * 生命周期函数--监听页面加载
@@ -41,31 +57,38 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // 获取islandIndex
-    let _self = this;
-    wx.request({
-      url: web_url + '/island/motto',
-      header: { 'content-type': 'application/json' },
-      method: 'GET',
-      dataType: 'json',
-      success: function (res) {
-        _self.setData({
-          islandMotto: res.data.entity
-        });
-      },
-    })
+    // 获取随机的默认背景图
+    this.setData({
+      bg_img: '/page/home/resources/bg/bg' + Math.floor(Math.random()) + '.jpg'
+    });
+
     // 获取背景图
     wx.request({
-      url: web_url + '/island/background',
+      url: web_url + '/island/background?backgroundType=MOTTO',
       header: { 'content-type': 'application/json' },
       method: 'GET',
       dataType: 'json',
       success: function (res) {
         _self.setData({
-          islandMottoBg: res.data.entity
+          bg_img: web_url + res.data.entity.backgroundImagePath,
         });
       },
     })
+
+    // 获取islandIndex
+    let _self = this;
+      wx.request({
+        url: web_url + '/island/motto',
+        header: { 'content-type': 'application/json' },
+        method: 'GET',
+        dataType: 'json',
+        success: function (res) {
+          _self.setData({
+            islandMotto: res.data.entity
+          });
+        },
+      })
+
   },
 
   /**

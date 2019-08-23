@@ -8,7 +8,7 @@ Page({
     remind: '加载中',
     angle: 0,
     userInfo: {},
-    islandIndex:''
+    islandIndex:{}
   },
   goToIndex: function() {
     wx.switchTab({
@@ -20,7 +20,6 @@ Page({
     wx.setNavigationBarTitle({
       title: wx.getStorageSync('mallName')
     })
-    console.log('onLoad  ', this.islandIndex);
   },
   onShow: function() {
     // 获取islandIndex

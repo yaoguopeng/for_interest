@@ -4,6 +4,8 @@
     "page/logs/logs",
 
     "page/home/index",
+    "page/home/pages/joke/index",
+
     "page/mine/index",
     
     "page/message/index",

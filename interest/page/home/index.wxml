@@ -1,8 +1,8 @@
 <!--page/home/index.wxml-->
 <view class='home-content'>
-  <image class='img-bg'  src='{{web_url}}{{islandMottoBg.backgroundImagePath}}'></image>
-   <view  class="left-btn btn">《</view>
-    <view  class="right-btn btn">》</view>
+  <image class='img-bg'  src='{{bg_img}}'></image>
+   <view  class="left-btn btn" bindtap="previousItem">《</view>
+    <view  class="right-btn btn" bindtap="nextItem">》</view>
     <view  class="motto">
       <text >{{islandMotto.content}} \n {{islandMotto.author}}</text>
     </view>

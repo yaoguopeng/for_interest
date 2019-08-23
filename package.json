@@ -1,13 +1,13 @@
 {
   "name": "miniprogram-demo",
   "version": "1.0.0",
-  "description": "WeChat miniprogram demo",
+  "description": "WeChat for-fun demo",
   "scripts": {
     "lint": "eslint ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wechat-miniprogram/miniprogram-demo.git"
+    "url": "git+https://github.com/yaoguopeng/for_interest.git"
   },
   "author": "wechat-miniprogram",
   "license": "MIT",
