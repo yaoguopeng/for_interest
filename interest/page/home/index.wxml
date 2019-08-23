@@ -3,6 +3,11 @@
   <image class='img-bg'  src='{{bg_img}}'></image>
    <view  class="left-btn btn" bindtap="previousItem">《</view>
     <view  class="right-btn btn" bindtap="nextItem">》</view>
+    <view class="music">
+    <audio poster="{{web_url}}{{islandMusic.musicImagePath}}" name="{{islandMusic.musicName}}" 
+    author="{{islandMusic.musicSinger}}" src="{{web_url}}{{islandMusic.musicPath}}"   id="myAudio" controls loop hidden="{{hideMusic}}">
+    </audio>
+    </view>
     <view  class="motto">
       <text >{{islandMotto.content}} \n {{islandMotto.author}}</text>
     </view>

@@ -86,9 +86,10 @@ App({
       })
     }
   },
+
   globalData: {
     userInfo: null,
-    islandIndex: {},
+    islandMusic: {},
     web_url: 'http://192.168.1.107:2013/'
   }
 })

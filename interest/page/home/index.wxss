@@ -34,3 +34,10 @@
       position: absolute;
       bottom: 20%;
     }
+.music{
+   margin-left: 8%;
+   z-index: 99;
+   opacity: 0.5;
+   position: absolute;
+   width: 100%;
+}

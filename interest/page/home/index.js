@@ -9,8 +9,49 @@ Page({
    */
   data: {
     currentTab: 0,
+    web_url: web_url,
     islandMotto: {},
+    islandMusic:{},
     bg_img:'',
+    animation: '',//改变animation的值（官网提供角度范围是-180~180，但是角度越大会一直旋转）
+  },
+
+  /** 音乐播放相关
+   * 
+   */
+  roll: function(){
+    this.animation = wx.createAnimation({
+      duration: 1400,
+      timingFunction: 'linear', // "linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"
+      delay: 0,
+      transformOrigin: '50% 50% 0',
+      success: function (res) {
+        console.log("res")
+      }
+    })
+  },
+  rotateAni: function (n) {
+    console.log("rotate==" + n)
+    this.animation.rotate(180 * (n)).step()
+    this.setData({
+      animation: this.animation.export()
+    })
+  },
+  // 获取播放音乐信息
+  getMusic: function(){
+    let _self = this;
+    wx.createInnerAudioContext();
+    wx.request({
+      url: web_url + '/island/music',
+      header: { 'content-type': 'application/json' },
+      method: 'GET',
+      dataType: 'json',
+      success: function (res) {
+        _self.setData({
+          islandMusic: res.data.entity,
+        });
+      },
+    })
   },
   /**
   * 后一个页面
@@ -57,6 +98,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let _self = this;
+    // 获取音乐信息
+    this.getMusic();
     // 获取随机的默认背景图
     this.setData({
       bg_img: '/page/home/resources/bg/bg' + Math.floor(Math.random()) + '.jpg'
@@ -76,7 +120,6 @@ Page({
     })
 
     // 获取islandIndex
-    let _self = this;
       wx.request({
         url: web_url + '/island/motto',
         header: { 'content-type': 'application/json' },
