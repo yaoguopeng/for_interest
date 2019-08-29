@@ -34,3 +34,28 @@
       position: absolute;
       bottom: 20%;
     }
+
+/* 背景音乐  */
+.music{
+   margin-left: 8%;
+   z-index: 99;
+   opacity: 1;
+   top: 20rpx;
+   right: 20rpx;
+   position: absolute;
+}
+
+.bgmImg {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.bgmImgAni {
+  animation: jumpball 4s infinite linear;
+}
+
+@keyframes jumpball {
+  100% {
+    transform: rotate(360deg);
+  }
+}

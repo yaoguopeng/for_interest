@@ -1,7 +1,8 @@
 // page/home/index.js
-
 var app = getApp();
-const web_url = getApp().globalData.web_url;
+const web_url = app.globalData.web_url;
+// 背景音乐
+const innerAudioContext = wx.createInnerAudioContext();
 Page({
 
   /**
@@ -13,29 +14,32 @@ Page({
     islandMotto: {},
     islandMusic:{},
     bg_img:'',
-    animation: '',//改变animation的值（官网提供角度范围是-180~180，但是角度越大会一直旋转）
   },
 
   /** 音乐播放相关
    * 
    */
-  roll: function(){
-    this.animation = wx.createAnimation({
-      duration: 1400,
-      timingFunction: 'linear', // "linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"
-      delay: 0,
-      transformOrigin: '50% 50% 0',
-      success: function (res) {
-        console.log("res")
-      }
-    })
-  },
-  rotateAni: function (n) {
-    console.log("rotate==" + n)
-    this.animation.rotate(180 * (n)).step()
-    this.setData({
-      animation: this.animation.export()
-    })
+  // 背景音乐
+  BGM: function (e) {
+    let that = this;
+    if (app.bgm_url) {
+      app.setGlobalData({
+        bgm_status: false,
+      })
+      innerAudioContext.pause(); /**  暂停音乐 */
+
+    } else {
+      app.setGlobalData({
+        bgm_status: true,
+        bgmImgAni: "bgmImgAni"
+      })
+      // 播放音乐
+      innerAudioContext.autoplay = true
+      innerAudioContext.loop = true
+      innerAudioContext.src = app.bgm_url;
+      innerAudioContext.play()
+
+    }
   },
   // 获取播放音乐信息
   getMusic: function(){

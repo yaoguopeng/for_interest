@@ -1,3 +1,4 @@
+
 const config = require('./config')
 
 App({
@@ -50,10 +51,6 @@ App({
   onHide() {
     console.log('App Hide')
   },
-  globalData: {
-    hasLogin: false,
-    openid: null
-  },
   // lazy loading openid
   getUserOpenId(callback) {
     const self = this
@@ -86,10 +83,13 @@ App({
       })
     }
   },
-
   globalData: {
+    hasLogin: false,
+    openid: null,
     userInfo: null,
     islandMusic: {},
+    bgm_url: '',// 背景音乐路径
+    bgm_status: false, // 背景音乐播放状态
     web_url: 'http://192.168.1.107:2013/'
   }
 })

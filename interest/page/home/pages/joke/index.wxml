@@ -1,6 +1,10 @@
 <!--page/joke/index.wxml-->
 <view class='home-content'>
-  <!-- <image class='img-bg'  src='{{web_url}}{{islandJokeBg.backgroundImagePath}}'></image> -->
+      <!--   背景音乐  -->
+<view class='music' catchtap='BGM'>
+  <image wx:if='{{bgm}}' class='bgmImg {{bgmImgAni}}' src='/page/home/resources/kind/playing.png'></image>
+  <image wx:else class='bgmImg' src='/page/home/resources/kind/stopping.png'></image>
+</view>
   <image class='img-bg'  src='{{bg_img}}'></image>
    <view  class="left-btn btn" bindtap="previousItem">《</view>
     <view  class="right-btn btn" bindtap="nextItem">》</view>

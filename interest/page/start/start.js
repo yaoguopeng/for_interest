@@ -14,16 +14,6 @@ Page({
     wx.switchTab({
       url: '/page/home/index',
     });
-    // 背景音乐
-    const backgroundAudioManager = wx.getBackgroundAudioManager()
-
-    backgroundAudioManager.title = '此时此刻'
-    backgroundAudioManager.epname = '此时此刻'
-    backgroundAudioManager.singer = '许巍'
-    backgroundAudioManager.coverImgUrl = 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000'
-    // 设置了 src 之后会自动播放
-    backgroundAudioManager.src = 'http://192.168.1.107:2013/sound/music/bbffd77a-9751-4c31-a86b-b51dbc386589.m4a'
-    backgroundAudioManager.play();
   },
   onLoad: function() {
     var that = this

@@ -5,7 +5,8 @@
 
     "page/home/index",
     "page/home/pages/joke/index",
-
+     "page/home/pages/music/index",
+    "page/home/pages/test/index",
     "page/mine/index",
     
     "page/message/index",

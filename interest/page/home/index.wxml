@@ -5,7 +5,7 @@
     <view  class="right-btn btn" bindtap="nextItem">》</view>
     <view class="music">
     <audio poster="{{web_url}}{{islandMusic.musicImagePath}}" name="{{islandMusic.musicName}}" 
-    author="{{islandMusic.musicSinger}}" src="{{web_url}}{{islandMusic.musicPath}}"   id="myAudio" controls loop hidden="{{hideMusic}}">
+    author="{{islandMusic.musicSinger}}" src="{{web_url}}{{islandMusic.musicPath}}"   id="myAudio" controls loop>
     </audio>
     </view>
     <view  class="motto">
