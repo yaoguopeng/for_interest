@@ -19,28 +19,6 @@ Page({
   /** 音乐播放相关
    * 
    */
-  // 背景音乐
-  BGM: function (e) {
-    let that = this;
-    if (app.bgm_url) {
-      app.setGlobalData({
-        bgm_status: false,
-      })
-      innerAudioContext.pause(); /**  暂停音乐 */
-
-    } else {
-      app.setGlobalData({
-        bgm_status: true,
-        bgmImgAni: "bgmImgAni"
-      })
-      // 播放音乐
-      innerAudioContext.autoplay = true
-      innerAudioContext.loop = true
-      innerAudioContext.src = app.bgm_url;
-      innerAudioContext.play()
-
-    }
-  },
   // 获取播放音乐信息
   getMusic: function(){
     let _self = this;
