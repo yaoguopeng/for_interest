@@ -5,3 +5,4 @@
   <image wx:else class='bgmImg' src='/page/home/resources/kind/stopping.png'></image>
 </view> -->
 <c-bgm bgm="{{bgm}}"></c-bgm>
+<c-music ></c-music>

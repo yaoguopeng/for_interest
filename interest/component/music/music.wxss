@@ -1,0 +1,8 @@
+/*--component/music.wxss */
+
+.music{
+   z-index: 99;
+   opacity: 0.5;
+   position: absolute;
+   width: 100%;
+}

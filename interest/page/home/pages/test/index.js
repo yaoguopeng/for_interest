@@ -6,11 +6,10 @@ import wxappStore from "../../../../lib/Store.js";
 Page(
   wxappStore.createPage({
     data: {
-      mp3: 'http://192.168.1.107:2013/sound/music/bbffd77a-9751-4c31-a86b-b51dbc386589.m4a',
+      bgm: 'http://192.168.1.107:2013/sound/music/bbffd77a-9751-4c31-a86b-b51dbc386589.m4a',
 
       // 背景音乐
-      bgm: false,
-      localtime: ''
+      playing: false,
     },
     // 背景音乐
     BGM: function (e) {
@@ -29,7 +28,7 @@ Page(
         // 播放音乐
         innerAudioContext.autoplay = true
         innerAudioContext.loop = true
-        innerAudioContext.src = that.data.mp3;
+        innerAudioContext.src = that.data.bgm;
         innerAudioContext.play()
 
       }
@@ -39,16 +38,25 @@ Page(
 
     onLoad: function () {
       this.store.commit({
-        name: 'testMutation',
-        payload: '开始显示当前日期（内页）'
+        name: 'bgmMutation',
+        payload: 'http://192.168.1.107:2013/sound/music/4da8ea03-cffe-4064-bf88-347e0eaacf39.mp3'
       });
     }
   },
     {
       mutations: {
-        testMutation: function ({ setData, payload, data }) {
+        bgmMutation: function ({ setData, payload, data }) {
           setData({
-            localtime: payload
+            bgm: payload
+          });
+        }
+      },
+      actions:{
+
+        bgmAction: function ({ commit, payload, data }) {
+          commit({
+            name: 'bgmMutation',
+            payload: payload
           });
         }
       }
