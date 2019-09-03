@@ -13,7 +13,7 @@ Page({
     islandJoke: {},
     bg_img: '',
     islandJokeBg:{},
-    mp3: 'http://192.168.1.107:2013/sound/music/bbffd77a-9751-4c31-a86b-b51dbc386589.m4a',
+    mp3: 'http://192.168.1.107:2013/sound/music/4da8ea03-cffe-4064-bf88-347e0eaacf39.mp3',
 
     // 背景音乐
     bgm: false,

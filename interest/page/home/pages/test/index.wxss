@@ -23,3 +23,8 @@
     transform: rotate(360deg);
   }
 }
+
+.test{
+   margin-top: 100rpx;
+  margin-bottom: 10rpx
+}

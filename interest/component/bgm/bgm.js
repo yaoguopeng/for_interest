@@ -9,7 +9,6 @@ Component(wxappStore.createComp({
   },
   data: {
     playing: false,
-    // bgm: 'http://192.168.1.107:2013/sound/music/bbffd77a-9751-4c31-a86b-b51dbc386589.m4a',
     bgm: '',
   },
   methods: {
@@ -35,12 +34,17 @@ Component(wxappStore.createComp({
 
       }
     },
-  }
-  ,
+  },
 
   ready: function () {
+// 绑定全局状态
+    this.getGlobalData({ globalDataKey: 'bgm', localDataKey: 'bgm' },
+      { globalDataKey: 'playing', localDataKey: 'playing' });
 
-    // this.getGlobalData({ globalDataKey: 'localtime', localDataKey: 'bgm' });
-
+    // 改变全局状态  
+    this.store.commit({
+      name: 'bgmMutation',
+      payload: 'http://192.168.1.107:2013/sound/music/4da8ea03-cffe-4064-bf88-347e0eaacf39.mp3'
+    })
   }
 }))

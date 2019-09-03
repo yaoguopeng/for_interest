@@ -1,6 +1,8 @@
 <!--component/bgm.wxml-->
  <!--   背景音乐  -->
 <view class='music' catchtap='BGM'>
+{{bgm}}
+{{playing}}
   <image wx:if='{{playing}}' class='bgmImg {{bgmImgAni}}' src='/page/home/resources/kind/playing.png'></image>
   <image wx:else class='bgmImg' src='/page/home/resources/kind/stopping.png'></image>
 </view>
